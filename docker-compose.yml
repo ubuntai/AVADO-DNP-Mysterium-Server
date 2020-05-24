@@ -3,15 +3,15 @@ volumes:
   mysterium_data: {}
 services:
   mysteriumnode.avado.dnp.dappnode.eth:
-    container_name: "mysteriumnode.avado.dnp.dappnode.eth"
-    image: "mysteriumnode.avado.dnp.dappnode.eth:0.0.33"
+    container_name: mysteriumnode.avado.dnp.dappnode.eth
+    image: 'mysteriumnode.avado.dnp.dappnode.eth:0.0.35'
     build: ./build
     volumes:
-      - 'mysterium_data:/data/mysterium'    
+      - 'mysterium_data:/data/mysterium'
     ports:
-      - "1294:1294/udp"      
+      - '1294:1294/udp'
+      - '4449:4449'
     network_mode: host
     privileged: true
     dns: 172.33.1.2
     restart: always
-    network_mode: host

@@ -37,7 +37,11 @@ do
         # echo "starting : $MYST"
 
         # /usr/bin/myst service --vendor.id="AVADO" --data-dir=$OS_DIR_DATA --runtime-dir=$OS_DIR_RUN --tequilapi.address=0.0.0.0 --ui.enable service  --openvpn.port $VPN_PORT
-        /usr/bin/myst --vendor.id="AVADO" --ui.enable --tequilapi.address=0.0.0.0 --data-dir=$OS_DIR_DATA service --openvpn.port $VPN_PORT --agreed-terms-and-conditions openvpn
+        # openVPN
+        #/usr/bin/myst --vendor.id="AVADO" --ui.enable --tequilapi.address=0.0.0.0 --data-dir=$OS_DIR_DATA service --openvpn.port $VPN_PORT --agreed-terms-and-conditions openvpn
+
+        #Wireguard
+        /usr/bin/myst --vendor.id="AVADO" --ui.enable --tequilapi.address=0.0.0.0 --data-dir=$OS_DIR_DATA service --agreed-terms-and-conditions wireguard
         
         echo "myst exited... wait 5m"
         sleep 600
