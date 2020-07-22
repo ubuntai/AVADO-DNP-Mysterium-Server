@@ -7,10 +7,31 @@
     }
   },
   "0.0.35": {
-    "hash": "/ipfs/QmaEBD5JXEFHywkSuFJritctDLhQ3GdSNWz9N1cTaroHRd",
+    "hash": "/ipfs/QmYZH3wn8T4ctj8fZLvhPs31PfnQAG9KoCXj1RR4gNmumV",
     "type": "manifest",
     "uploadedTo": {
-      "http://23.254.227.151:5001": "Sun, 24 May 2020 15:03:36 GMT"
+      "dappnode": "Fri, 10 Jul 2020 19:55:43 GMT"
+    }
+  },
+  "0.0.36": {
+    "hash": "/ipfs/Qmf4DcVDTStHrVkPArbLmbgsYF55CidL48nTFLaeqqWC65",
+    "type": "manifest",
+    "uploadedTo": {
+      "http://23.254.227.151:5001": "Fri, 10 Jul 2020 12:51:34 GMT"
+    }
+  },
+  "0.0.37": {
+    "hash": "/ipfs/QmRd53iYqo5PG2SEVGTGVDm47aMFRu6gq9qmQo3a6JRudb",
+    "type": "manifest",
+    "uploadedTo": {
+      "http://23.254.227.151:5001": "Fri, 10 Jul 2020 20:05:19 GMT"
+    }
+  },
+  "0.0.38": {
+    "hash": "/ipfs/Qmcmv2QRqPh7s52BEaCLG7dJj7yFLTcmCPdvxMhTxKn38T",
+    "type": "manifest",
+    "uploadedTo": {
+      "http://23.254.227.151:5001": "Fri, 10 Jul 2020 20:07:29 GMT"
     }
   }
 }
