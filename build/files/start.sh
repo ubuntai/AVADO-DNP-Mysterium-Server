@@ -40,6 +40,8 @@ do
         # openVPN
         #/usr/bin/myst --vendor.id="AVADO" --ui.enable --tequilapi.address=0.0.0.0 --data-dir=$OS_DIR_DATA service --openvpn.port $VPN_PORT --agreed-terms-and-conditions openvpn
 
+        /usr/local/bin/prepare-run-env.sh 
+
         #Wireguard
         /usr/bin/myst --vendor.id="AVADO" --ui.enable --tequilapi.address=0.0.0.0 --data-dir=$OS_DIR_DATA service --agreed-terms-and-conditions wireguard
         

@@ -33,5 +33,19 @@
     "uploadedTo": {
       "http://23.254.227.151:5001": "Fri, 10 Jul 2020 20:07:29 GMT"
     }
+  },
+  "0.0.39": {
+    "hash": "/ipfs/QmcGu9XwVM41UA4twcpbuYBHL9bv8b5Tr7z65fMLQJTFoj",
+    "type": "manifest",
+    "uploadedTo": {
+      "dappnode": "Fri, 07 Aug 2020 15:40:13 GMT"
+    }
+  },
+  "0.0.40": {
+    "hash": "/ipfs/QmSXh8ZiXZtM6vmwHiy5GjRBVDbcgh8xEXrJZPgTAzunXj",
+    "type": "manifest",
+    "uploadedTo": {
+      "http://23.254.227.151:5001": "Wed, 12 Aug 2020 15:55:50 GMT"
+    }
   }
 }
