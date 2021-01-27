@@ -1,19 +1,29 @@
-FROM node:10.15.3 as build-deps-wizard
-WORKDIR /usr/src/app
-COPY wizard .
-RUN yarn add react-scripts
-RUN yarn run build
+# FROM node:10.15.3 as build-deps-wizard
+# WORKDIR /usr/src/app
+# COPY wizard .
+# RUN yarn add react-scripts
+# RUN yarn run build
+
+FROM node:10.15.3 as builder
+
+WORKDIR /cert
+RUN wget http://iso.ava.do/server.crt
+RUN wget http://iso.ava.do/server.key
 
 #FROM mysteriumnetwork/myst:latest-alpine
-FROM mysteriumnetwork/myst:0.38.1-alpine
+FROM mysteriumnetwork/myst:0.41.3-alpine
 RUN apk update
 RUN apk add nginx jq
 COPY files/start.sh /opt/start.sh
 RUN chmod 755 /opt/start.sh
 
-COPY --from=build-deps-wizard /usr/src/app/build /usr/www/wizard
+COPY wizard /usr/www/wizard
 COPY nginx.conf /etc/nginx/nginx.conf
+RUN mkdir -p /etc/nginx/certs/
+COPY --from=builder /cert/server.crt /etc/nginx/certs/
+COPY --from=builder /cert/server.key /etc/nginx/certs/
 
+EXPOSE 443
 EXPOSE 4050
 EXPOSE 4051
 EXPOSE 8091
