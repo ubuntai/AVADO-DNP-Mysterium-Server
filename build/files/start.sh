@@ -13,46 +13,14 @@ nginx -c /etc/nginx/nginx.conf
 sleep 2
 netstat -ln
 
-while true
-do
-    if [[ -f /data/mysterium/AGREE ]]; then
-        echo "Config file found ..."
-        
-        export VPN_PORT=1294
-        echo "Starting myst on port $VPN_PORT"
-        
-        #--config-dir=$OS_DIR_CONFIG \
-    
-        # export MYST="
-        # /usr/bin/myst service \
-        # --vendor.id="AVADO" \
-        # --data-dir=$OS_DIR_DATA \
-        # --runtime-dir=$OS_DIR_RUN \
-        # --tequilapi.address=0.0.0.0 \
-        # --ui.enable \
-        # service 
-        # --openvpn.port $VPN_PORT
-        # "
+export VPN_PORT=1294
+echo "Starting myst on port $VPN_PORT"
 
-        # echo "starting : $MYST"
+/usr/local/bin/prepare-run-env.sh 
 
-        # /usr/bin/myst service --vendor.id="AVADO" --data-dir=$OS_DIR_DATA --runtime-dir=$OS_DIR_RUN --tequilapi.address=0.0.0.0 --ui.enable service  --openvpn.port $VPN_PORT
-        # openVPN
-        #/usr/bin/myst --vendor.id="AVADO" --ui.enable --tequilapi.address=0.0.0.0 --data-dir=$OS_DIR_DATA service --openvpn.port $VPN_PORT --agreed-terms-and-conditions openvpn
+#Wireguard
+/usr/bin/myst --vendor.id="AVADO" --ui.enable --tequilapi.address=0.0.0.0 --data-dir=$OS_DIR_DATA service --agreed-terms-and-conditions wireguard
 
-        /usr/local/bin/prepare-run-env.sh 
+echo "myst exited... wait 5m"
+sleep 600
 
-        #Wireguard
-        /usr/bin/myst --vendor.id="AVADO" --ui.enable --tequilapi.address=0.0.0.0 --data-dir=$OS_DIR_DATA service --agreed-terms-and-conditions wireguard
-        
-        echo "myst exited... wait 5m"
-        sleep 600
-
-      else
-        if [[ -z "${WAITING_MESSAGE_SHOWN}" ]]; then
-            echo "Config files not present yet... waiting"
-        fi
-        export WAITING_MESSAGE_SHOWN=1
-        sleep 2
-    fi
-done
